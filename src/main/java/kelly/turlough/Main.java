@@ -7,8 +7,5 @@ public class Main {
     {
         Mancala newGame = new Mancala();
         newGame.boardSetup();
-
-        int hello = 0;
-
-    }
+            }
 }
