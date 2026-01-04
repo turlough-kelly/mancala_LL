@@ -6,11 +6,11 @@ public class linked_list
     private Node tail;
     private int length;
 
-    class Node
+    public class Node
     {
         int value;
         Node next;
-        Node prev;
+        Node opposite = null;
 
 
         Node(int value)
@@ -27,9 +27,19 @@ public class linked_list
         length = 1;
     }
 
+    public static void resetValue(Node node)
+    {
+        node.value = 0;
+    }
+
     public Node getHead()
     {
         return head;
+    }
+
+    public void setHead(Node node)
+    {
+        head = node;
     }
 
     public Node getTail()
@@ -172,6 +182,73 @@ public class linked_list
 
         return temp;
     }
+
+    public Node get(int index)
+    {
+        if(length < index || index < 0)
+        {
+            return null;
+        }
+
+        Node temp = head;
+        for(int i = 0; i < index; i++)
+        {
+            temp = temp.next;
+        }
+
+
+        return temp;
+    }
+
+    //node 1 = p1 base, node 2 = p1 start; nodes 2 - 7 = p1 spaces; node 7 = end
+    //node 8 = p2 base; node 9 = p2 start; nodes 9 -14 = p2 spaces; node 14 = end
+
+    //important nodes: 1, 2, 7, 8, 9, 14
+
+//
+//    public void mancalaSetup(Node p1b, Node p2b, Node p1s, Node p2s, Node p1e, Node p2e)
+//    {
+//        head = p1b;
+//        Node temp = head;
+//        append(4);
+//        p1s = tail;
+//
+//        while(temp.next != null)
+//        {
+//            switch(length)
+//            {
+//                case 6:
+//                    append(4);
+//                    p1e = tail;
+//                    temp = temp.next;
+//                    System.out.println("Added");
+//                    break;
+//                case 7:
+//                    append(0);
+//                    p2b = tail;
+//                    temp = temp.next;
+//                    System.out.println("Added");
+//                    break;
+//                case 8:
+//                    append(4);
+//                    p2s = tail;
+//                    temp = temp.next;
+//                    System.out.println("Added");
+//                    break;
+//                case 13:
+//                    append(4);
+//                    p2e = tail;
+//                    temp = temp.next;
+//                    System.out.println("Added");
+//                    break;
+//                default:
+//                    append(4);
+//                    temp = tail;
+//                    System.out.println("Added");
+//                    break;
+//            }
+//        }
+//    }
 
 //    public void clearList()
 //    {

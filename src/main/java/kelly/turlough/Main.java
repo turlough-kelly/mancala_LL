@@ -5,12 +5,10 @@ package kelly.turlough;
 public class Main {
     public static void main(String[] args)
     {
-        linked_list list = new linked_list(5);
-        list.append(6);
+        Mancala newGame = new Mancala();
+        newGame.boardSetup();
 
-        list.removeLast();
-
-        list.printList();
+        int hello = 0;
 
     }
 }
