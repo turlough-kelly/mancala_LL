@@ -22,7 +22,7 @@ public class Mancala
     public void boardSetup()
     {
         board = new linked_list(0);
-        player1Base = board.getHead();
+        player2Base = board.getHead();
         while(board.getLength() != 14)
         {
             switch(board.getLength())
@@ -37,7 +37,7 @@ public class Mancala
                     break;
                 case 7:
                     board.append(0);
-                    player2Base = board.get(7);
+                    player1Base = board.get(7);
                     break;
                 case 8:
                     board.append(4);
@@ -52,7 +52,7 @@ public class Mancala
                     break;
             }
         }
-        board.printList();
+        //board.printList();
     }
 
     //when creating the loop, end when either pocket has 25 or more stones (majority wins)
@@ -79,7 +79,7 @@ public class Mancala
     {
         int currentPieces = selectedPocket.value;
         linked_list.resetValue(selectedPocket);
-        linked_list.Node temp = selectedPocket;
+        linked_list.Node temp = selectedPocket.next;
         while(currentPieces != 0)
         {
             temp.value += 1;
