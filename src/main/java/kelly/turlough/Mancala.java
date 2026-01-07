@@ -7,6 +7,8 @@ import java.util.Set;
 
 public class Mancala
 {
+    linked_list board;
+
     linked_list.Node player1Base;
     linked_list.Node player1Start;
     linked_list.Node player1End;
@@ -15,14 +17,16 @@ public class Mancala
     linked_list.Node player2Start;
     linked_list.Node player2End;
 
-    linked_list board;
-
     //node 1 = p2 base, node 2 = p1 start; nodes 2 - 7 = p1 spaces; node 7 = end
     //node 8 = p1 base; node 9 = p2 start; nodes 9 -14 = p2 spaces; node 14 = end
 
     //opposites are 7 positions apart
 
     //important nodes: 1, 2, 7, 8, 9, 14
+    Mancala()
+    {
+        boardSetup();
+    }
 
     public void boardSetup()
     {
