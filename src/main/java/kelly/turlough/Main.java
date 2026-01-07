@@ -10,5 +10,6 @@ public class Main {
         newGame.movePieces(newGame.player1Start, 1);
         newGame.board.printList();
 
+
     }
 }

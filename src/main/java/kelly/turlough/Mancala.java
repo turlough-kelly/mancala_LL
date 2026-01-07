@@ -52,13 +52,15 @@ public class Mancala
                     break;
             }
         }
-        for(int i = 0; i < 8; i++)
+        //sets opposites for nodes
+        for(int i = 0; i < 7; i++)
         {
             board.get(i).opposite = board.get(i + 7);
             board.get(i + 7).opposite = board.get(i);
         }
-        //board.printList();
     }
+
+
 
     //when creating the loop, end when either pocket has 25 or more stones (majority wins)
     public void capture(linked_list.Node currentNode, int currentPlayer)

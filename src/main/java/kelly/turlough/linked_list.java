@@ -10,7 +10,7 @@ public class linked_list
     {
         int value;
         Node next;
-        Node opposite = null;
+        Node opposite;
 
 
         Node(int value)
@@ -61,6 +61,7 @@ public class linked_list
         {
             System.out.println(temp.value);
             System.out.println("Opposite value: " + temp.opposite.value);
+            System.out.println("--------------------");
             temp = temp.next;
         }
     }
