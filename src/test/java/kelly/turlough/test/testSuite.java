@@ -1,4 +1,17 @@
 package kelly.turlough.test;
+import kelly.turlough.*;
 
-public class testSuite {
+import org.junit.*;
+
+public class testSuite
+{
+    Mancala testGame = new Mancala();
+
+
+    @Test
+    public void checkProperMovement()
+    {
+        int bingus = 1;
+        Assert.assertEquals(1, bingus);
+    }
 }
