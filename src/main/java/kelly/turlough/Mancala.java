@@ -12,8 +12,8 @@ public class Mancala
 
     linked_list board;
 
-    //node 1 = p1 base, node 2 = p1 start; nodes 2 - 7 = p1 spaces; node 7 = end
-    //node 8 = p2 base; node 9 = p2 start; nodes 9 -14 = p2 spaces; node 14 = end
+    //node 1 = p2 base, node 2 = p1 start; nodes 2 - 7 = p1 spaces; node 7 = end
+    //node 8 = p1 base; node 9 = p2 start; nodes 9 -14 = p2 spaces; node 14 = end
 
     //opposites are 7 positions apart
 
@@ -51,6 +51,11 @@ public class Mancala
                     board.append(4);
                     break;
             }
+        }
+        for(int i = 0; i < 8; i++)
+        {
+            board.get(i).opposite = board.get(i + 7);
+            board.get(i + 7).opposite = board.get(i);
         }
         //board.printList();
     }

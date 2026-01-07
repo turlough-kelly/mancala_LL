@@ -60,6 +60,7 @@ public class linked_list
         while(temp != null)
         {
             System.out.println(temp.value);
+            System.out.println("Opposite value: " + temp.opposite.value);
             temp = temp.next;
         }
     }
