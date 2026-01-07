@@ -11,6 +11,7 @@ public class linked_list
         int value;
         Node next;
         Node opposite;
+        int owner = 0;
 
 
         Node(int value)
@@ -56,13 +57,16 @@ public class linked_list
 
     public void printList()
     {
+        int i = 0;
         Node temp = head;
         while(temp != null)
         {
+            System.out.println("Node index: " + i);
             System.out.println(temp.value);
             System.out.println("Opposite value: " + temp.opposite.value);
             System.out.println("--------------------");
             temp = temp.next;
+            i++;
         }
     }
 
