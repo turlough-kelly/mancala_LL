@@ -7,7 +7,6 @@ public class Main {
     {
         Mancala newGame = new Mancala();
         newGame.turn(1);
-        newGame.turn(1);
         newGame.board.printList();
 
 
