@@ -62,7 +62,7 @@ public class linked_list
         while(temp != null)
         {
             System.out.println("Node index: " + i);
-            System.out.println(temp.value);
+            System.out.println("Node value: " + temp.value);
             System.out.println("Opposite value: " + temp.opposite.value);
             System.out.println("--------------------");
             temp = temp.next;

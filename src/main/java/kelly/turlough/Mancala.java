@@ -78,14 +78,9 @@ public class Mancala
         System.out.println("Please select a node from 1 - 6: ");
         int selectedNode = scanner.nextInt();
 
-        switch(playerTurn)
+        if(playerTurn == 2)
         {
-            //amends node to call correct node
-            case 1:
-                selectedNode += 1;
-                break;
-            case 2:
-                selectedNode += 7;
+            selectedNode += 7;
         }
         if(board.get(selectedNode).value == 0)
         {
@@ -104,29 +99,27 @@ public class Mancala
         int currentPieces = selectedPocket.value;
         linked_list.resetValue(selectedPocket);
         linked_list.Node temp = selectedPocket.next;
+
         while(currentPieces != 0)
         {
             temp.value += 1;
             currentPieces -= 1;
+            temp = temp.next;
             if (playerTurn == 1)
             {
-                if (temp.next == player2Base)
+                if (temp == player2Base)
                 {
                     System.out.println("Skipping base...");
-                    temp = temp.next.next;
+                    temp = temp.next;
                 }
             }
             else if (playerTurn == 2)
             {
-                if (temp.next == player1Base)
+                if (temp == player1Base)
                 {
                     System.out.println("Skipping base...");
-                    temp = temp.next.next;
+                    temp = temp.next;
                 }
-            }
-            else
-            {
-                temp = temp.next;
             }
         }
         //check after turn conditions
