@@ -17,6 +17,10 @@ public class Mancala
     linked_list.Node player2Start;
     linked_list.Node player2End;
 
+
+    //mainly to be used for testing
+    public linked_list getBoard() {return board; }
+
     //node 1 = p2 base, node 2 = p1 start; nodes 2 - 7 = p1 spaces; node 7 = end
     //node 8 = p1 base; node 9 = p2 start; nodes 9 -14 = p2 spaces; node 14 = end
 
