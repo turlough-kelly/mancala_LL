@@ -53,6 +53,11 @@ public class linked_list
         return length;
     }
 
+    public int getValue(Node node) { return node.value; }
+
+    public void setValue(Node node, int value) { node.value = value; }
+
+
     //below to do
 
     public void printList()
