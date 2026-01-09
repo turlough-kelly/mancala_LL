@@ -7,12 +7,14 @@ public class testSuite
 {
     Mancala testGame = new Mancala();
 
-
     @Test
     public void checkProperMovement()
     {
-        int bingus = 1;
-        Assert.assertEquals(1, bingus);
+        testGame.boardSetup();
+        testGame.getBoard().setValue(testGame.getBoard().get(4), 13);
+        testGame.movePieces(testGame.getBoard().get(4), 1);
+        testGame.getBoard().printList();
+        Assert.assertEquals(0, testGame.getBoard().getValue(testGame.getBoard().get(4)));
     }
 
     @Test
@@ -44,3 +46,4 @@ public class testSuite
         Assert.assertEquals(1, bingus);
     }
 }
+
