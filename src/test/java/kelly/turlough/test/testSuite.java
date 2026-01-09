@@ -5,14 +5,15 @@ import org.junit.*;
 
 public class testSuite
 {
-    Mancala testGame = new Mancala();
-
 
     @Test
     public void checkProperMovement()
     {
-        int bingus = 1;
-        Assert.assertEquals(1, bingus);
+        Mancala testGame = new Mancala();
+        testGame.getBoard().setValue(testGame.getBoard().get(4), 13);
+        testGame.movePieces(testGame.getBoard().get(4), 1);
+        testGame.getBoard().printList();
+        Assert.assertEquals(1, testGame.getBoard().getValue(testGame.getBoard().get(4)));
     }
 
     @Test
@@ -44,3 +45,4 @@ public class testSuite
         Assert.assertEquals(1, bingus);
     }
 }
+

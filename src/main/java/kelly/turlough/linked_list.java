@@ -57,14 +57,20 @@ public class linked_list
 
     public void setValue(Node node, int value) { node.value = value; }
 
-
     //below to do
 
     public void printList()
     {
         int i = 0;
         Node temp = head;
-        while(temp != null)
+        //do separately for head
+        System.out.println("Node index: " + i);
+        System.out.println("Node value: " + temp.value);
+        System.out.println("Opposite value: " + temp.opposite.value);
+        System.out.println("--------------------");
+        temp = temp.next;
+        i++;
+        while(temp != head)
         {
             System.out.println("Node index: " + i);
             System.out.println("Node value: " + temp.value);
