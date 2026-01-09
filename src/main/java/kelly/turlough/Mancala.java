@@ -23,10 +23,12 @@ public class Mancala
     //opposites are 7 positions apart
 
     //important nodes: 1, 2, 7, 8, 9, 14
-    Mancala()
+    public Mancala()
     {
         boardSetup();
     }
+
+    public linked_list getBoard() { return board; }
 
     public void boardSetup()
     {
