@@ -57,12 +57,14 @@ public class Mancala
                 case 13:
                     board.append(4);
                     player2End = board.get(13);
+                    board.get(13).next = board.get(0);
                     break;
                 default:
                     board.append(4);
                     break;
             }
         }
+
         //sets opposites for nodes
         for(int i = 0; i < 7; i++)
         {
@@ -71,6 +73,8 @@ public class Mancala
             board.get(i + 7).opposite = board.get(i);
             board.get(i + 7).owner = 2;
         }
+
+
     }
 
 
