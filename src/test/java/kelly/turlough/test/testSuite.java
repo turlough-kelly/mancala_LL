@@ -19,17 +19,16 @@ public class testSuite
     @Test
     public void checkCapture()
     {
+        Mancala testGame = new Mancala();
+        testGame.getBoard().setValue(testGame.getBoard().get(4), 1);
+        testGame.getBoard().setValue(testGame.getBoard().get(5), 0);
+        testGame.getBoard().setValue(testGame.getBoard().getOpposite(testGame.getBoard().get(5)), 15);
+        testGame.movePieces(testGame.getBoard().get(4), 1);
+        testGame.movePieces(testGame.getBoard().get(4), 1);
         int bingus = 1;
-        Assert.assertEquals(1, bingus);
+        Assert.assertEquals(16, testGame.getBoard().getValue(testGame.getCurrentPlayerBase(1)));
     }
 
-
-    @Test
-    public void checkCompleteBoardTraversal()
-    {
-        int bingus = 1;
-        Assert.assertEquals(1, bingus);
-    }
 
     @Test
     public void checkEndGameScenario()

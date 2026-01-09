@@ -57,6 +57,8 @@ public class linked_list
 
     public void setValue(Node node, int value) { node.value = value; }
 
+    public Node getOpposite(Node node) { return node.opposite; }
+
     //below to do
 
     public void printList()
