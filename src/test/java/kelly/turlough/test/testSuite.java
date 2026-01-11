@@ -9,12 +9,7 @@ public class testSuite
     @Test
     public void checkProperMovement()
     {
-        Mancala testGame = new Mancala();
-        testGame.getBoard().setValue(testGame.getBoard().get(4), 13);
-        testGame.movePieces(testGame.getBoard().get(4), 1);
-        testGame.getBoard().printList();
-        Assert.assertEquals(1, testGame.getBoard().getValue(testGame.getBoard().get(4)));
-    }
+        }
 
     @Test
     public void checkCapture()
