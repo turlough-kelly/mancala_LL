@@ -37,6 +37,8 @@ Any future plans?
 Yes! This is currently a text-based verison of Mancala, played within CMD. My plan is to use this as a basis to learn 
 Spring (and maybe Springboot) and create a full application out of this.
 
+At present, the game is designed for two players only, but I would like to add a CPU to allow a single player to play on their own, but this is something that will be revisited when the game is complete, so that I can design it around the game's core functions.
+
 
 # Running this application
 
