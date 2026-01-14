@@ -29,6 +29,7 @@ public class Mancala
     public Mancala()
     {
         boardSetup();
+        gameLoop();
     }
 
     public linked_list getBoard() { return board; }
@@ -80,12 +81,37 @@ public class Mancala
 
     }
 
+    public void gameLoop()
+    {
+        System.out.println("Welome to Mancala! Player 1 is going first.");
+
+        while(!checkGameEnd())
+        {
+            turn(1);
+            turn(2);
+        }
+
+        System.out.println("Thanks for playing Mancala!");
+    }
+
+
+
 
     public void turn(int playerTurn)
     {
+        System.out.println("It is player " + playerTurn + "'s turn.");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please select a node from 1 - 6: ");
         int selectedNode = scanner.nextInt();
+        if(selectedNode < 1 || selectedNode > 6)
+        {
+            System.out.println("This node is not valid. Please select another");
+            while(selectedNode < 0 || selectedNode > 6)
+            {
+                selectedNode = scanner.nextInt();
+            }
+        }
+
 
         if(playerTurn == 2)
         {
@@ -135,7 +161,11 @@ public class Mancala
         if((playerTurn == 1 && temp == getCurrentPlayerBase(playerTurn)) || (playerTurn == 2 && temp == getCurrentPlayerBase(playerTurn)))
         {
             System.out.println("Extra turn!");
-            turn(playerTurn);
+            if(!checkGameEnd())
+            {
+                turn(playerTurn);
+            }
+
         }
 
         if(temp.value == 1 && temp.owner == playerTurn)
@@ -143,12 +173,6 @@ public class Mancala
             System.out.println("Pieces captured!");
             capture(temp, playerTurn);
         }
-    }
-
-
-    public void gameLoop()
-    {
-
     }
 
 
