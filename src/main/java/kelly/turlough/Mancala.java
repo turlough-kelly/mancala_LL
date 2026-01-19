@@ -212,9 +212,7 @@ public class Mancala
     public boolean checkGameEnd()
     {
         int p1 = board.get(1).value + board.get(2).value + board.get(3).value + board.get(4).value + board.get(5).value+ board.get(6).value;
-        System.out.println("p1 value: " + p1);
         int p2 = board.get(8).value + board.get(9).value + board.get(10).value + board.get(11).value + board.get(12).value + board.get(13).value;
-        System.out.println("p1 value: " + p2);
 
         return p1 == 0 || p2 == 0;
     }
