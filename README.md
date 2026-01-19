@@ -8,7 +8,7 @@ What is Mancala?
 Mancala is a board game about picking up stones and putting them down somewhere else. The premise is simple:
 
 - You have 6 pockets, as well as a "home" - called a mancala - where you deposit your stones.
-- Your player also has 6 pockets and a mancala, with each player's mancala being on their right.
+- The opposite player also has 6 pockets and a mancala, with each player's mancala being on their right.
 - There are 48 stones on the board; your goal is to capture the most stones. Once stones are in your mancala, they are 
 permenantly removed from play.
 - The game ends when one player has no stones in any of their pockets when it is their turn.
