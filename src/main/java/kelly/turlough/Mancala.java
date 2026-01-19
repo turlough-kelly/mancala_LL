@@ -1,9 +1,6 @@
 package kelly.turlough;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 public class Mancala
 {
@@ -72,6 +69,7 @@ public class Mancala
         //sets opposites for nodes
         for(int i = 0; i < 7; i++)
         {
+            //need to update, opposites are 1/6, 2/5, 3/4, 4/3, 5/2, 6/1
             board.get(i).opposite = board.get(i + 7);
             board.get(i).owner = 1;
             board.get(i + 7).opposite = board.get(i);
@@ -88,7 +86,10 @@ public class Mancala
         while(!checkGameEnd())
         {
             turn(1);
-            turn(2);
+            if(!checkGameEnd())
+            {
+                turn(2);
+            }
         }
 
         System.out.println("Thanks for playing Mancala!");
@@ -210,12 +211,12 @@ public class Mancala
 
     public boolean checkGameEnd()
     {
-        int p1Start = 1;
-        int p2Start = 8;
-        Set<Integer> p1Checks = new HashSet<>(Arrays.asList(board.get(1).value, board.get(2).value, board.get(3).value, board.get(4).value, board.get(5).value, board.get(6).value));
-        Set<Integer> p2Checks = new HashSet<>(Arrays.asList(board.get(8).value, board.get(9).value, board.get(10).value, board.get(11).value, board.get(12).value, board.get(13).value));
+        int p1 = board.get(1).value + board.get(2).value + board.get(3).value + board.get(4).value + board.get(5).value+ board.get(6).value;
+        System.out.println("p1 value: " + p1);
+        int p2 = board.get(8).value + board.get(9).value + board.get(10).value + board.get(11).value + board.get(12).value + board.get(13).value;
+        System.out.println("p1 value: " + p2);
 
-        return p1Checks.size() == 1 && p1Checks.contains(0) || p2Checks.size() == 1 && p2Checks.contains(0);
+        return p1 == 0 || p2 == 0;
     }
 
     public void printGameBoard(int playerTurn)
