@@ -99,7 +99,8 @@ public class Mancala
 
     public void turn(int playerTurn)
     {
-        System.out.println("It is player " + playerTurn + "'s turn.");
+        printGameBoard(playerTurn);
+        System.out.println("\nIt is player " + playerTurn + "'s turn.");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please select a node from 1 - 6: ");
         int selectedNode = scanner.nextInt();
@@ -133,13 +134,13 @@ public class Mancala
     {
         int currentPieces = selectedPocket.value;
         linked_list.resetValue(selectedPocket);
-        linked_list.Node temp = selectedPocket.next;
+        linked_list.Node temp = selectedPocket;
 
         while(currentPieces != 0)
         {
+            temp = temp.next;
             temp.value += 1;
             currentPieces -= 1;
-            temp = temp.next;
             if (playerTurn == 1)
             {
                 if (temp == player2Base)
@@ -216,6 +217,28 @@ public class Mancala
 
         return p1Checks.size() == 1 && p1Checks.contains(0) || p2Checks.size() == 1 && p2Checks.contains(0);
     }
+
+    public void printGameBoard(int playerTurn)
+    {
+        System.out.println("\n\n\n");
+
+        switch(playerTurn)
+        {
+            //switch cases to print the board in different orientations, depending on the player going
+            case 1:
+                System.out.println("Player 2 Pockets        | " + board.get(13).value + " |" + "| " + board.get(12).value + " |" + "| " + board.get(11).value + " |" + "| " + board.get(10).value + " |" + "| " + board.get(9).value + " |" + "| " + board.get(8).value + " |");
+                System.out.println("\nYour pockets            | " + board.get(1).value + " |" + "| " + board.get(2).value + " |" + "| " + board.get(3).value + " |" + "| " + board.get(4).value + " |" + "| " + board.get(5).value + " |" + "| " + board.get(6).value + " |");
+                System.out.println("                          1    2    3    4    5    6  \n");
+                break;
+            case 2:
+                System.out.println("Player 1 Pockets        | " + board.get(6).value + " |" + "| " + board.get(5).value + " |" + "| " + board.get(4).value + " |" + "| " + board.get(3).value + " |" + "| " + board.get(2).value + " |" + "| " + board.get(1).value + " |");
+                System.out.println("\nYour pockets            | " + board.get(8).value + " |" + "| " + board.get(9).value + " |" + "| " + board.get(10).value + " |" + "| " + board.get(11).value + " |" + "| " + board.get(12).value + " |" + "| " + board.get(13).value + " |");
+                System.out.println("                          1    2    3    4    5    6  \n");
+                break;
+        }
+        System.out.println("\nPlayer 1 Mancala: " + board.get(7).value + "\nPlayer 2 Mancala: " + board.get(0).value);
+    }
+
 
 //    public linked_list.Node getCOppositePlayerBase(int player)
 //    {
