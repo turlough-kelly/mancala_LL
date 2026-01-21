@@ -67,14 +67,19 @@ public class Mancala
         }
 
         //sets opposites for nodes
-        for(int i = 0; i < 7; i++)
+        for(int i = 1; i < 7; i++)
         {
             //need to update, opposites are 1/6, 2/5, 3/4, 4/3, 5/2, 6/1
-            board.get(i).opposite = board.get(i + 7);
+            board.get(i).opposite = board.get(14 - i);
             board.get(i).owner = 1;
-            board.get(i + 7).opposite = board.get(i);
-            board.get(i + 7).owner = 2;
+            board.get(14 - i).opposite = board.get(i);
+            board.get(14 - i).owner = 2;
         }
+        //edge cases for the 2 bases
+        board.get(0).opposite = board.get(7);
+        board.get(7).owner = 1;
+        board.get(7).opposite = board.get(0);
+        board.get(0).owner = 2;
 
 
     }
