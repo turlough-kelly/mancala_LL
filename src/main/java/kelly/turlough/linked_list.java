@@ -57,7 +57,6 @@ public class linked_list
 
     public void setValue(Node node, int value) { node.value = value; }
 
-    //below to do
 
     public void printList()
     {

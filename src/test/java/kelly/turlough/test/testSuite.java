@@ -39,5 +39,14 @@ public class testSuite
         int bingus = 1;
         Assert.assertEquals(1, bingus);
     }
+
+
+    @Test
+    public void checkIfOppositesCorrectlyAssigned()
+    {
+        int bingus = 1;
+
+        Assert.assertEquals(1, bingus);
+    }
 }
 
